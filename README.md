@@ -135,11 +135,15 @@ response = requests.post(url, json=payload)
 2. Start the microservice:
    ```
    python app.py
+   Or:
+   py app.py
    ```
 
 3. Run the test program (in a new terminal):
    ```
    python test_program.py
+   Or:
+   py test_program.py
    ```
 
 ---
