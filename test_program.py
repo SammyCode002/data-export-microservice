@@ -46,17 +46,24 @@ def test_export_characters_json():
             "characters": [
                 {
                     "id": 1,
-                    "name": "Kira Voss",
-                    "race": "Human",
-                    "class": "Space Pilot",
-                    "items": ["Plasma Blaster", "Navigation Chip"]
+                    "name": "Sung Jinwoo",
+                    "title": "Shadow Monarch",
+                    "rank": "S-Rank Hunter",
+                    "abilities": ["Ruler's Authority", "Shadow Extraction", "Domain Expansion"]
                 },
                 {
                     "id": 2,
-                    "name": "Zor'ak the Wise",
-                    "race": "Elf",
-                    "class": "Mage",
-                    "items": ["Staff of Fire", "Ancient Spellbook"]
+                    "name": "Gojo Satoru",
+                    "title": "The Strongest",
+                    "rank": "Special Grade Sorcerer",
+                    "abilities": ["Infinity", "Six Eyes", "Hollow Purple"]
+                },
+                {
+                    "id": 3,
+                    "name": "Levi Ackerman",
+                    "title": "Humanity's Strongest Soldier",
+                    "rank": "Captain",
+                    "abilities": ["ODM Gear Mastery", "Ackerman Power", "Combat Expertise"]
                 }
             ]
         },
@@ -87,10 +94,10 @@ def test_export_characters_text():
             "characters": [
                 {
                     "id": 1,
-                    "name": "Kira Voss",
-                    "race": "Human",
-                    "class": "Space Pilot",
-                    "items": ["Plasma Blaster", "Navigation Chip"]
+                    "name": "Sung Jinwoo",
+                    "title": "Shadow Monarch",
+                    "rank": "S-Rank Hunter",
+                    "abilities": ["Ruler's Authority", "Shadow Extraction", "Domain Expansion"]
                 }
             ]
         },
