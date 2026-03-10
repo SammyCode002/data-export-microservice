@@ -29,29 +29,17 @@ def export_data():
     
     # Validate required fields
     if 'data' not in body:
-        return jsonify({
-            "success": False,
-            "error": "Missing field",
-            "message": "Request must include 'data' field"
-        }), 400
+        return make_error("Missing field", "Request must include 'data' field")
     
     if 'format' not in body:
-        return jsonify({
-            "success": False,
-            "error": "Missing field",
-            "message": "Request must include 'format' field"
-        }), 400
+        return make_error("Missing field", "Request must include 'data' field")
     
     data = body['data']
     output_format = body['format'].lower()
     
     # Validate format
     if output_format not in ['json', 'text']:
-        return jsonify({
-            "success": False,
-            "error": "Invalid format",
-            "message": "Format must be 'json' or 'text'"
-        }), 400
+        return make_error("Invalid format", "Format must be 'json' or 'text'")
     
     # Export to JSON
     if output_format == 'json':
@@ -98,6 +86,13 @@ def convert_to_text(data, indent=0):
     
     return "\n".join(lines)
 
+def make_error(error, message):
+    """helper function for error response"""
+    return jsonify({
+        "success": False,
+        "error": error,
+        "message": message
+    }), 400
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5001, debug=True)
