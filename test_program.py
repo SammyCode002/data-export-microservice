@@ -2,7 +2,7 @@ import requests
 
 # Base URL for the microservice
 BASE_URL = "http://localhost:5001"
-
+EXPORT_URL = f"{BASE_URL}/export"
 
 def test_export_tasks_json():
     """Test exporting tasks to JSON format (Samuel's To-Do List)."""
@@ -11,7 +11,7 @@ def test_export_tasks_json():
     print("TEST 1: Export Tasks to JSON (Samuel's To-Do List)")
     print("=" * 50)
     
-    url = f"{BASE_URL}/export"
+    url = EXPORT_URL
     payload = {
         "data": {
             "tasks": [
@@ -40,7 +40,7 @@ def test_export_characters_json():
     print("TEST 2: Export Characters to JSON (Devin's Lore Tracker)")
     print("=" * 50)
     
-    url = f"{BASE_URL}/export"
+    url = EXPORT_URL
     payload = {
         "data": {
             "characters": [
@@ -88,7 +88,7 @@ def test_export_characters_text():
     print("TEST 3: Export Characters to Text (Devin's Lore Tracker)")
     print("=" * 50)
     
-    url = f"{BASE_URL}/export"
+    url = EXPORT_URL
     payload = {
         "data": {
             "characters": [
@@ -122,7 +122,7 @@ def test_invalid_request():
     print("TEST 4: Error Handling (Missing Data)")
     print("=" * 50)
     
-    url = f"{BASE_URL}/export"
+    url = EXPORT_URL
     payload = {
         "format": "json"
         # Missing 'data' field
